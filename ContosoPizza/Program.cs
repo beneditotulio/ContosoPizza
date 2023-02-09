@@ -3,9 +3,15 @@ using ContosoPizza.Models;
 
 using ContosoPizzaContext context = new ContosoPizzaContext();
 
-//var products = context.Products
-//    .Where(p => p.Price > 10.00M)
-//    .OrderBy(p => p.Name);
+var vaggieSpecial = context.Products
+    .Where(p=> p.Name == "Vaggie Spcial Pizza")
+    .FirstOrDefault();
+
+if (vaggieSpecial is Product)
+{
+    vaggieSpecial.Price = 10.99M;
+}
+
 var products = from product in context.Products
                where product.Price > 10.00M
                orderby product.Name
