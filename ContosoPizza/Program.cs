@@ -9,7 +9,7 @@ var vaggieSpecial = context.Products
 
 if (vaggieSpecial is Product)
 {
-    vaggieSpecial.Price = 10.99M;
+    context.Remove(vaggieSpecial);
 }
 
 context.SaveChanges();
