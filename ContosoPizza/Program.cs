@@ -12,6 +12,8 @@ if (vaggieSpecial is Product)
     vaggieSpecial.Price = 10.99M;
 }
 
+context.SaveChanges();
+
 var products = from product in context.Products
                where product.Price > 10.00M
                orderby product.Name
